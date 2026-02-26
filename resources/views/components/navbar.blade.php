@@ -1,14 +1,13 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>home</title>
-
+    <title>super blog</title>
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
+
 
     <!-- Styles / Scripts -->
     @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
@@ -19,12 +18,32 @@
         </style>
     @endif
 </head>
-<body>
+<body class="p-16 ">
+
+<div class="border font-semibold justify-center p-4 rounded-xl flex gap-2 mb-6" >
+    <a href="/" > home </a>
+    <a href="https://souleyd-portfolio.vercel.app/" > contact </a>
+    <a href="https://souleyd-portfolio.vercel.app/" > about </a>
+    <a href="/create" > add </a>
 
 
-<x-navbar>
+</div>
 
-</x-navbar>
+
+
+
+
+
+
+
+
+{{$slot}}
+
+
+
+
+
+
 
 </body>
 </html>

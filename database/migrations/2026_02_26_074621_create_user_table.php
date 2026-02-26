@@ -11,11 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('properties', function (Blueprint $table) {
+        Schema::create('UserApp', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable();
-            $table->text('description')->nullable();
-            $table->decimal('price_per_night', 8, 2)->nullable();
+            $table->boolean('role')->default(1);
             $table->timestamps();
         });
     }
@@ -25,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('properties');
+        Schema::dropIfExists('user');
     }
 };
