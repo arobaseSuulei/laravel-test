@@ -18,13 +18,47 @@
         </style>
     @endif
 </head>
-<body class="p-16 ">
+<body class="p-2 text-sm ">
 
-<div class="border font-semibold justify-center p-4 rounded-xl flex gap-2 mb-6" >
-    <a href="/" > home </a>
-    <a href="https://souleyd-portfolio.vercel.app/" > contact </a>
-    <a href="https://souleyd-portfolio.vercel.app/" > about </a>
-    <a href="/create" > add </a>
+<div class="flex sm:flex-row flex-col justify-between">
+    <div class="border font-semibold justify-center p-4 rounded-xl flex gap-2 mb-6" >
+        <a href="/" > logo </a>
+
+
+
+    </div>
+
+    <div class="border  items-center font-semibold justify-center p-4 rounded-xl flex gap-2 mb-6" >
+        <div class="flex items-center">
+            <a href="/" > home </a>
+            <a href="https://souleyd-portfolio.vercel.app/" > contact </a>
+            <a href="https://souleyd-portfolio.vercel.app/" > about </a>
+            <a href="/create" > add </a>
+        </div>
+
+        <div class="border items-center sm:hidden font-semibold justify-center p-4 rounded-xl flex gap-2 mb-6" >
+            <a href="/" > deconnexion </a>
+
+
+
+        </div>
+
+
+    </div>
+
+    <div class="hidden sm:block border font-semibold justify-center p-4 rounded-xl flex gap-2 mb-6" >
+        <a href="/" class="text-red-400" > deconnexion </a>
+
+
+
+    </div>
+
+
+
+
+
+
+
 
 
 </div>
