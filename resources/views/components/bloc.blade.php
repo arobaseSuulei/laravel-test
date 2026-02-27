@@ -18,25 +18,10 @@
         </style>
     @endif
 </head>
-<body class="p-2 text-sm ">
+<body class="p-16 ">
 
-
-
-<div class="">
-
-
-
-    <div class="flex justify-between items-center">
-
-        <nav class="flex border rounded-2xl mt-2 p-4 mx-4 sm:mx-88 justify-between items-center w-full">
-            <div><p>logo</p></div>
-            <div><p>Home</p></div>
-            <div><p>déconnexion</p></div>
-        </nav>
-        <p class="rounded-2xl px-3 py-1 bg-red-400">D</p>
-    </div>
-
-
+<div class="border  p-4 rounded-xl w-25">
+    {{ $slot }}
 </div>
 
 
@@ -46,7 +31,8 @@
 
 
 
-{{$slot}}
+
+
 
 
 

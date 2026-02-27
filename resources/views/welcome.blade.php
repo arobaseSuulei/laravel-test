@@ -26,5 +26,12 @@
 
 </x-navbar>
 
+
+
+
+<x-bloc>
+
+</x-bloc>
+
 </body>
 </html>
