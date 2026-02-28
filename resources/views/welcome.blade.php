@@ -30,7 +30,7 @@
 
 
 <x-bloc>
-
+bonjour
 </x-bloc>
 
 </body>
