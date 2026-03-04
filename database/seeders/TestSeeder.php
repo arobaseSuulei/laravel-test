@@ -20,11 +20,11 @@ class TestSeeder extends Seeder
 
         // ── Properties ───────────────────────────────────────
         DB::table('properties')->insert([
-            ['name' => 'Villa Azur',           'description' => 'Belle villa avec piscine vue mer à Nice.',       'price_per_night' => 250.00],
-            ['name' => 'Chalet des Alpes',     'description' => 'Chalet cosy au pied des pistes à Megève.',       'price_per_night' => 180.00],
-            ['name' => 'Appartement Parisien', 'description' => 'Studio moderne au cœur du Marais, Paris.',       'price_per_night' => 120.00],
-            ['name' => 'Mas Provençal',        'description' => 'Mas authentique avec jardin en Luberon.',        'price_per_night' => 95.00],
-            ['name' => 'Cabane dans les Arbres','description' => 'Séjour insolite en forêt près de Bordeaux.',   'price_per_night' => 75.00],
+            ['name' => 'Villa Azur',           'description' => 'Belle villa avec piscine vue mer à Nice.','image' => 'https://a0.muscache.com/im/pictures/hosting/Hosting-1225447282819176692/original/14c56092-de10-4e21-867b-a5a1f73d3559.jpeg?im_w=960',       'price_per_night' => 250.00],
+            ['name' => 'Chalet des Alpes',     'description' => 'Chalet cosy au pied des pistes à Megève.', 'image' => 'Belle villa avec piscine vue mer à Nice.',       'price_per_night' => 180.00],
+            ['name' => 'Appartement Parisien', 'description' => 'Studio moderne au cœur du Marais, Paris.', 'image' => 'Belle villa avec piscine vue mer à Nice.' ,     'price_per_night' => 120.00],
+            ['name' => 'Mas Provençal',        'description' => 'Mas authentique avec jardin en Luberon.', 'image' => 'Belle villa avec piscine vue mer à Nice.' ,      'price_per_night' => 95.00],
+            ['name' => 'Cabane dans les Arbres','description' => 'Séjour insolite en forêt près de Bordeaux.', 'image' => 'Belle villa avec piscine vue mer à Nice.' ,  'price_per_night' => 75.00],
         ]);
 
         // ── Booking ──────────────────────────────────────────

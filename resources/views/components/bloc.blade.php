@@ -20,7 +20,7 @@
 </head>
 <body class="p-16 ">
 
-<div class="border  p-4 rounded-xl w-25">
+<div class="  p-4 ">
     {{ $slot }}
 </div>
 

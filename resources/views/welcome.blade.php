@@ -27,17 +27,28 @@
 </x-navbar>
 
 
+<h1 class="text-xl font-semibold p-4">Logements à visiter</h1>
 
-@foreach($property as $pr)
 
-    <x-bloc  >
+<div class="grid  sm:grid-cols-4 grid-cols-2   gap-4 p-4">
+    @foreach($property as $pr)
 
-        <p>{{$pr->name}}</p>
+        <x-bloc  >
 
-        <a class="underline" href="/index/{{{$pr->id}}}"> hey visit</a>
-    </x-bloc>
+            <div class="flex flex-col">
 
-@endforeach
+
+                <a href="/index/{{{$pr->id}}}">
+                    <img class="rounded-xl" src="{{$pr->image}}"/>
+                </a>
+
+                <p class="mt-2 font-semibold">{{$pr->name}}</p>
+                <p class="mt-2 opacity-65 text-xs">{{$pr->description}}</p>
+            </div>
+        </x-bloc>
+
+    @endforeach
+</div>
 
 </body>
 </html>

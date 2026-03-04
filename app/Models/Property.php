@@ -8,5 +8,5 @@ class Property extends Model
 {
     //
     protected $table='properties';
-    protected $fillable=['name','description','price_per_night'];
+    protected $fillable=['name','description','price_per_night','image'];
 }
