@@ -38,11 +38,13 @@
             <div class="flex flex-col">
 
 
-                <a href="/index/{{{$pr->id}}}">
-                    <img class="rounded-xl" src="{{$pr->image}}"/>
+                <a href="/index/{{{$pr->id}}}" class="block">
+                    <div class="aspect-[4/3] w-full overflow-hidden rounded-xl">
+                        <img src="{{ $pr->image }}" class="w-full h-full object-cover" alt="" />
+                    </div>
                 </a>
 
-                <p class="mt-2 font-semibold">{{$pr->name}}</p>
+                <p class="mt-2  font-semibold">{{$pr->name}}</p>
                 <p class="mt-2 opacity-65 text-xs">{{$pr->description}}</p>
             </div>
         </x-bloc>
