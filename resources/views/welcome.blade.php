@@ -28,10 +28,16 @@
 
 
 
+@foreach($property as $pr)
 
-<x-bloc>
-bonjour
-</x-bloc>
+    <x-bloc  >
+
+        <p>{{$pr->name}}</p>
+
+        <a class="underline" href="/index/{{{$pr->id}}}"> hey visit</a>
+    </x-bloc>
+
+@endforeach
 
 </body>
 </html>

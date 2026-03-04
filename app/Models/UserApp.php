@@ -8,6 +8,7 @@ class UserApp extends Model
 {
     //
 
-    protected $fillable=['name','role'];
     protected $table='UserApp';
+    protected $fillable=['name','role'];
+
 }

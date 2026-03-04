@@ -1,0 +1,39 @@
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+
+class TestSeeder extends Seeder
+{
+    public function run(): void
+    {
+        // ── UserApp ──────────────────────────────────────────
+        DB::table('UserApp')->insert([
+            ['name' => 'Alice Martin',   'role' => 1],
+            ['name' => 'Bob Dupont',     'role' => 0],
+            ['name' => 'Clara Fontaine', 'role' => 0],
+            ['name' => 'David Leroy',    'role' => 1],
+            ['name' => 'Emma Bernard',   'role' => 0],
+        ]);
+
+        // ── Properties ───────────────────────────────────────
+        DB::table('properties')->insert([
+            ['name' => 'Villa Azur',           'description' => 'Belle villa avec piscine vue mer à Nice.',       'price_per_night' => 250.00],
+            ['name' => 'Chalet des Alpes',     'description' => 'Chalet cosy au pied des pistes à Megève.',       'price_per_night' => 180.00],
+            ['name' => 'Appartement Parisien', 'description' => 'Studio moderne au cœur du Marais, Paris.',       'price_per_night' => 120.00],
+            ['name' => 'Mas Provençal',        'description' => 'Mas authentique avec jardin en Luberon.',        'price_per_night' => 95.00],
+            ['name' => 'Cabane dans les Arbres','description' => 'Séjour insolite en forêt près de Bordeaux.',   'price_per_night' => 75.00],
+        ]);
+
+        // ── Booking ──────────────────────────────────────────
+        DB::table('booking')->insert([
+            ['user_id' => 1, 'property_id' => 1, 'start_date' => '2025-07-01', 'end_date' => '2025-07-07'],
+            ['user_id' => 2, 'property_id' => 3, 'start_date' => '2025-08-15', 'end_date' => '2025-08-20'],
+            ['user_id' => 3, 'property_id' => 2, 'start_date' => '2025-12-20', 'end_date' => '2025-12-27'],
+            ['user_id' => 4, 'property_id' => 4, 'start_date' => '2025-09-05', 'end_date' => '2025-09-10'],
+            ['user_id' => 5, 'property_id' => 5, 'start_date' => '2025-06-01', 'end_date' => '2025-06-03'],
+        ]);
+    }
+}
