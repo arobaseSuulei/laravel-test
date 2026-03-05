@@ -65,6 +65,25 @@ L'application est entièrement responsive et optimisée pour mobile et desktop.
 - Page détail : image + carte côte à côte sur mobile, image pleine largeur sur desktop
 - Formulaire de réservation adapté selon la taille d'écran
 ---
+
+## Captures d'écran
+
+### Authentification
+![Login](screenshots/auth.png)
+
+### homepage mobile
+![Demo](https://raw.githubusercontent.com/arobaseSuulei/suley-js/main/image.png)
+
+### Réservation
+![Booking](screenshots/panier.png)
+
+### Administration Filament
+![Admin](screenshots/filament-admin.png)
+
+### formulaire de reservation
+![Admin](screenshots/reserv.png)
+
+---
 ## 🗂️ Structure du projet
 
 ### Modèles
