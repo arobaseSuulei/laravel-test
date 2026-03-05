@@ -34,7 +34,8 @@ composer install
 npm install && npm run build
 cp .env.example .env
 touch database/database.sqlite
-php artisan migrate --seed
+php artisan migrate
+php artisan db:seed --class=TestSeeder
 php artisan serve
 ```
 
