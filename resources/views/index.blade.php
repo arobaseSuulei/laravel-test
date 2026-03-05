@@ -24,14 +24,14 @@
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:max-w-3xl sm:mx-auto">
-        <nav class="flex justify-center border mt-4 rounded-xl p-4 gap-2">
+        <nav class="sm:flex hidden justify-center border mt-4 rounded-xl p-4 gap-2">
             <p class="font-semibold">coup de coeur</p>
             <p class="flex">
 
             </p>
         </nav>
 
-        <nav class="hidden sm:flex justify-center border mt-4 rounded-xl p-4 gap-4">
+        <nav class="flex mb-12 justify-center border mt-4 rounded-xl p-4 gap-4">
             @auth
                 <form method="POST" action="/booking/{{$property->id}}">
                     @csrf
