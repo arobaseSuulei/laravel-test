@@ -43,4 +43,10 @@ Route::post('/booking/{id}', function ($id) {
     return redirect('/')->with('success', 'Réservation effectuée !');
 })->middleware('auth');
 
+
+Route::get('/reservations', function () {
+    $bookings = Booking::where('user_id', auth()->id())->with('property')->get();
+    return view('reservations', ['bookings' => $bookings]);
+})->middleware('auth');
+
 require __DIR__.'/auth.php';

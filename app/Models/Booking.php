@@ -9,4 +9,9 @@ class Booking extends Model
     //
     protected $table='booking';
     protected $fillable=['user_id','property_id','start_date','end_date'];
+
+
+    public function property() {
+        return $this->belongsTo(Property::class);
+    }
 }

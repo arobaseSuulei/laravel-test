@@ -18,22 +18,112 @@
         </style>
     @endif
 </head>
+
+
+
+<script>
+    function ouvrirModal() {
+        document.getElementById('modal').classList.remove('hidden');
+    }
+    function fermerModal() {
+        document.getElementById('modal').classList.add('hidden');
+    }
+</script>
+
+
+<!-- Modal Coming Soon -->
+<div id="modal" class="hidden fixed inset-0 flex items-center justify-center z-50">
+    <!-- Fond sombre -->
+    <div class="absolute inset-0 bg-black/50" onclick="fermerModal()"></div>
+
+    <!-- Contenu du modal -->
+    <div class="relative bg-white rounded-2xl p-8 mx-8 text-center shadow-xl">
+        <p class="text-lg font-medium mb-1">🚀 Coming Soon</p>
+        <p class="text-sm text-gray-500 mb-4">Reservez avec un simple chat avec une IA sera plus simple</p>
+        <button onclick="fermerModal()" class="border rounded-xl px-4 py-2 text-sm hover:bg-gray-100">
+            Fermer
+        </button>
+    </div>
+</div>
+
+
+
+
+
 <body class="p-2 text-sm ">
 
 
-<div class="sm:hidden border p-2 flex  rounded-3xl mx-16 my-4">Commencer a explorer</div>
+
+
+<div class="">
+    <div onclick="ouvrirModal()" class="sm:hidden border p-2 flex justify-center rounded-3xl mx-16 my-4 cursor-pointer">
+        Reserver avec l' IA
+    </div>
+
+
+
+    <div class="sm:hidden flex items-center flex-row-reverse gap-3">
+    @auth
+
+            <form method="POST" action="/logout">
+                @csrf
+                <button type="submit" class="p-2 rounded-xl bg-black text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15m-3 0-3-3m0 0 3-3m-3 3H15" />
+                    </svg>
+
+                </button>
+            </form>
+
+
+
+
+
+
+
+    @endauth
+
+        @guest
+            <a href="/register" class="sm:hidden block p-2 rounded-xl bg-black text-white">
+                Connexion
+            </a>
+        @endguest
+
+
+
+
+    </div>
+</div>
+
 
 <div class="flex flex-col gap-2 fixed sm:static bottom-0 left-0 w-full">
 
 
 
-    <div class=" hidden sm:block text-center mx-52 gap-12">
+    <div class=" hidden sm:flex justify-center mt-2">
 
-        <nav class="flex border rounded-2xl gap-4 mt-2 p-4 mx-4 sm:mx-88 justify-between items-center w-full">
-            <div><p>logo</p></div>
+        <nav class="flex border rounded-2xl gap-4 p-4 items-center w-fit">
+
             <div><a href="/">Home</a></div>
-            <div><p>déconnexion</p></div>
+
+            <div><a href="/reservations">panier</a></div>
+
+
+
+            <div onclick="ouvrirModal()" class="hidden border p-2 sm:flex justify-center rounded-3xl  cursor-pointer">
+                Reserver avec l' IA
+            </div>
+
+            @guest
+                <a href="/login" class="hidden sm:block p-2 rounded-xl bg-black text-white">
+                    Connexion
+                </a>
+            @endguest
+
+
         </nav>
+
+
 
 
 
@@ -44,13 +134,37 @@
                 </svg>
             </a>
 
+
+
+
+
     </div>
 
-    <div class="sm:hidden gap-4 mx-12 ">
+    @auth
+        <div class="hidden sm:flex items-center flex-row-reverse gap-3">
+            <form method="POST" action="/logout">
+                @csrf
+                <button type="submit" class="p-2 rounded-xl bg-black text-white">
+                    Déconnexion
+                </button>
+            </form>
 
-        <nav class="flex justify-between border rounded-2xl mt-2 p-4 mx-4 sm:mx-88  items-center gap-23">
+            <a href="/admin">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" />
+                </svg>
+            </a>
+
+        </div>
+    @endauth
+
+
+
+    <div class="sm:hidden   gap-4 mx-12 ">
+
+        <nav class="flex justify-between bg-white border rounded-2xl mt-2 p-4 mx-4 sm:mx-88  items-center gap-23">
             <div>
-                <a href="/admin"> <!-- hearth emote -->
+                <a href="/reservations"> <!-- hearth emote -->
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
                     </svg>
@@ -68,8 +182,9 @@
             <div>
                 <a href="/admin">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" />
                     </svg>
+
                 </a>
 
             </div>

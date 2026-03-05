@@ -11,6 +11,7 @@
 
         <!-- Email Address -->
         <div class="mt-4">
+            <p class="text-red-400">fun fact you can register as an admin with @admin.com</p>
             <x-input-label for="email" :value="__('Email')" />
             <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
