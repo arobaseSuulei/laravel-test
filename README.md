@@ -117,9 +117,8 @@ Le panel permet de gérer :
 - **SQLite** — base de données
 
 ---
-##  🚀 Next step
+## 🚀 Next step
 
-Intégrer un LLM qui permettra aux utilisateurs de reserver des propriétés rien qu'en parlant à notre IA
+Intégrer un LLM qui permettra aux utilisateurs de réserver des propriétés rien qu'en parlant à notre IA
 
-![Demo](https://github.com/arobaseSuulei/Myportfolio/blob/main/my-project/src/assets/airbnbAI.mp4)
-
+<video src="https://raw.githubusercontent.com/arobaseSuulei/Myportfolio/main/my-project/src/assets/airbnbAI.mp4" controls width="100%"></video>
