@@ -7,53 +7,142 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+# Laravel Test - Application de Réservation Immobilière
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 📋 Présentation
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Application de gestion de réservations immobilières développée avec Laravel, Filament, Blade et TailwindCSS.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## ⚙️ Prérequis
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+- PHP 8.1+
+- Composer
+- Node.js & NPM
+- Git
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+> Le projet utilise **SQLite** par défaut, aucune installation de MySQL n'est nécessaire.
 
-## Laravel Sponsors
+---
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## 🚀 Installation
 
-### Premium Partners
+### 1. Cloner le projet
+```bash
+git clone <url-du-repo>
+cd laravel-test
+```
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+### 2. Installer les dépendances PHP
+```bash
+composer install
+```
 
-## Contributing
+### 3. Installer les dépendances JS
+```bash
+npm install
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 4. Configurer l'environnement
+```bash
+cp .env.example .env
+php artisan key:generate
+```
 
-## Code of Conduct
+### 5. Créer la base de données et lancer les migrations
+```bash
+touch database/database.sqlite
+php artisan migrate
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 6. Insérer les données de test
+```bash
+php artisan db:seed --class=TestSeeder
+```
 
-## Security Vulnerabilities
+### 7. Compiler les assets
+```bash
+npm run build
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### 8. Lancer le serveur
+```bash
+php artisan serve
+```
 
-## License
+L'application est accessible sur `http://localhost:8000`
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+---
+---
+
+## 📱 Responsive Design
+
+L'application est entièrement responsive et optimisée pour mobile et desktop.
+
+
+![Demo](https://raw.githubusercontent.com/arobaseSuulei/suley-js/main/image.png)
+### Points clés du responsive :
+- Navigation mobile avec barre fixe en bas de page
+- Navigation desktop avec navbar centrée en haut
+- Grille de propriétés : 2 colonnes sur mobile, 4 sur desktop
+- Page détail : image + carte côte à côte sur mobile, image pleine largeur sur desktop
+- Formulaire de réservation adapté selon la taille d'écran
+
+### Points clés du responsive :
+- Navigation mobile avec barre fixe en bas de page
+- Navigation desktop avec navbar centrée en haut
+- Grille de propriétés : 2 colonnes sur mobile, 4 sur desktop
+- Page détail : image + carte côte à côte sur mobile, image pleine largeur sur desktop
+- Formulaire de réservation adapté selon la taille d'écran
+---
+## 🗂️ Structure du projet
+
+### Modèles
+- **User** — utilisateurs gérés par Laravel Breeze
+- **Property** — biens immobiliers (nom, description, prix par nuit, image)
+- **Booking** — réservations (user, property, date début, date fin)
+
+### Routes principales
+| Route | Description |
+|-------|-------------|
+| `/` | Liste des propriétés |
+| `/index/{id}` | Détail d'une propriété |
+| `/reservations` | Mes réservations (auth requis) |
+| `/booking/{id}` | Créer une réservation (auth requis) |
+| `/admin` | Panel Filament (admin uniquement) |
+| `/login` | Connexion |
+| `/register` | Inscription |
+
+---
+
+## 🔐 Authentification
+
+L'authentification est gérée par **Laravel Breeze**. Tout le monde peut consulter les propriétés, mais il faut être connecté pour réserver.
+
+---
+
+## 🛠️ Panel d'administration Filament
+
+Accessible sur `/admin`. Réservé aux comptes dont l'email se termine par `@admin.com`.
+
+Pour créer un compte admin :
+```bash
+php artisan make:filament-user
+```
+Utilisez un email en `@admin.com`.
+
+Le panel permet de gérer :
+- Les propriétés (CRUD complet)
+- Les réservations
+- Les utilisateurs
+
+---
+
+## 🧰 Technologies utilisées
+
+- **Laravel 12**
+- **Laravel Breeze** — authentification
+- **Filament v5** — panel d'administration
+- **TailwindCSS v4** — styles
+- **SQLite** — base de données
