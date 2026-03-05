@@ -20,7 +20,11 @@
         <nav class="flex items-center justify-between p-4 gap-4">
             <p class="font-semibold ">{{$property->name}}</p>
             <p class="font-semibold  text-red-400">{{$property->price_per_night}} € / nuit</p>
-            <p class="p-2 rounded-xl bg-black text-white">reservez</p>
+            @auth
+                <a href="/booking/{{$property->id}}" class="p-2 rounded-xl bg-black text-white">Réserver</a>
+            @else
+                <a href="/login" class="p-2 rounded-xl bg-black text-white">Réserver</a>
+            @endauth
         </nav>
 
     </div>
@@ -47,9 +51,17 @@
 
             </p>
         </nav>
-        <nav class="hidden sm:block sm:flex justify-center border mt-4 rounded-xl p-4 gap-4">
-            <p class="text-sm font-semibold">{{$property->price_per_night}} €</p>
-            <p>/nuit</p>
+        <nav class="hidden  sm:flex justify-center border mt-4 rounded-xl p-4 gap-4">
+            @auth
+                <form method="POST" action="/booking/{{$property->id}}">
+                    @csrf
+                    <input type="date" name="start_date" required>
+                    <input type="date" name="end_date" required>
+                    <button type="submit" class="p-2 rounded-xl bg-black text-white">Réserver</button>
+                </form>
+            @else
+                <a href="/register" class="p-2 rounded-xl bg-black text-white">Réserver</a>
+            @endauth
         </nav>
     </div>
 </x-navbar>

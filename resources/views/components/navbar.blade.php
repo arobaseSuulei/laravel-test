@@ -21,15 +21,15 @@
 <body class="p-2 text-sm ">
 
 
-<div class="sm:hidden border p-2 flex justify-center rounded-3xl mx-16 my-4">Commencer a explorer</div>
+<div class="sm:hidden border p-2 flex  rounded-3xl mx-16 my-4">Commencer a explorer</div>
 
 <div class="flex flex-col gap-2 fixed sm:static bottom-0 left-0 w-full">
 
 
 
-    <div class=" hidden sm:flex justify-between items-center">
+    <div class=" hidden sm:block text-center mx-52 gap-12">
 
-        <nav class="flex border rounded-2xl mt-2 p-4 mx-4 sm:mx-88 justify-between items-center w-full">
+        <nav class="flex border rounded-2xl gap-4 mt-2 p-4 mx-4 sm:mx-88 justify-between items-center w-full">
             <div><p>logo</p></div>
             <div><a href="/">Home</a></div>
             <div><p>déconnexion</p></div>
@@ -37,16 +37,18 @@
 
 
 
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-16">
-                <a href="/admin"></a>
-                <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-            </svg>
+            <a class="sm:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <a href="/admin"></a>
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                </svg>
+            </a>
 
     </div>
 
-    <div class="sm:hidden flex justify-center items-center">
+    <div class="sm:hidden gap-4 mx-12 ">
 
-        <nav class="flex border rounded-2xl mt-2 p-4 mx-4 sm:mx-88  items-center gap-23">
+        <nav class="flex justify-between border rounded-2xl mt-2 p-4 mx-4 sm:mx-88  items-center gap-23">
             <div>
                 <a href="/admin"> <!-- hearth emote -->
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -56,9 +58,11 @@
 
             </div>
             <div>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
-                </svg>
+                <a href="/">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+                    </svg>
+                </a>
 
             </div>
             <div>

@@ -9,13 +9,14 @@ class TestSeeder extends Seeder
 {
     public function run(): void
     {
-        // ── UserApp ──────────────────────────────────────────
-        DB::table('UserApp')->insert([
-            ['name' => 'Alice Martin',   'role' => 1],
-            ['name' => 'Bob Dupont',     'role' => 0],
-            ['name' => 'Clara Fontaine', 'role' => 0],
-            ['name' => 'David Leroy',    'role' => 1],
-            ['name' => 'Emma Bernard',   'role' => 0],
+
+        // ── Users ─────────────────────────────────────────────
+        DB::table('users')->insert([
+            ['name' => 'Alice Martin',   'email' => 'alice@test.com',  'password' => bcrypt('password')],
+            ['name' => 'Bob Dupont',     'email' => 'bob@test.com',    'password' => bcrypt('password')],
+            ['name' => 'Clara Fontaine', 'email' => 'clara@test.com',  'password' => bcrypt('password')],
+            ['name' => 'David Leroy',    'email' => 'david@test.com',  'password' => bcrypt('password')],
+            ['name' => 'Emma Bernard',   'email' => 'emma@test.com',   'password' => bcrypt('password')],
         ]);
 
         // ── Properties ───────────────────────────────────────
