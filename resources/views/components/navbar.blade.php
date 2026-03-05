@@ -119,7 +119,7 @@
             </div>
 
             @guest
-                <a href="/login" class="hidden sm:block p-2 rounded-xl bg-black text-white">
+                <a href="/register" class="hidden sm:block p-2 rounded-xl bg-black text-white">
                     Connexion
                 </a>
             @endguest
