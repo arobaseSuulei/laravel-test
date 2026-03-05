@@ -121,4 +121,4 @@ Le panel permet de gérer :
 
 Intégrer un LLM qui permettra aux utilisateurs de réserver des propriétés rien qu'en parlant à notre IA
 
-<video src="https://raw.githubusercontent.com/arobaseSuulei/Myportfolio/main/my-project/src/assets/airbnbAI.mp4" controls width="100%"></video>
+<video src="https://github.com/arobaseSuulei/laravel-test/issues/1#issue-4029778027" controls width="100%"></video>
