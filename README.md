@@ -115,3 +115,11 @@ Le panel permet de gérer :
 - **Filament v5** — panel d'administration
 - **TailwindCSS v4** — styles
 - **SQLite** — base de données
+
+---
+##  🚀 Next step
+
+Intégrer un LLM qui permettra aux utilisateurs de reserver des propriétés rien qu'en parlant à notre IA
+
+![Demo](https://github.com/arobaseSuulei/Myportfolio/blob/main/my-project/src/assets/airbnbAI.mp4)
+
