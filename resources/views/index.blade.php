@@ -15,9 +15,9 @@
             <p class="font-semibold text-red-400">{{$property->price_per_night}} € / nuit</p>
 
 
-                <a href="/reservations" class="p-2 px-4 rounded-xl bg-black text-white whitespace-nowrap">
-                    panier
-                </a>
+            <a href="/reservations" class="p-2 px-4 rounded-xl bg-black text-white whitespace-nowrap">
+                panier
+            </a>
 
         </nav>
 
