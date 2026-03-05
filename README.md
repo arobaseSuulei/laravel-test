@@ -27,53 +27,20 @@ Application de gestion de réservations immobilières développée avec Laravel,
 ---
 
 ## 🚀 Installation
-
-### 1. Cloner le projet
 ```bash
 git clone https://github.com/arobaseSuulei/innovqube-immo.git
 cd laravel-test
-```
-
-### 2. Installer les dépendances PHP
-```bash
 composer install
-```
-
-### 3. Installer les dépendances JS
-```bash
-npm install
-```
-
-### 4. Configurer l'environnement
-```bash
+npm install && npm run build
 cp .env.example .env
-php artisan key:generate
-```
-
-### 5. Créer la base de données et lancer les migrations
-```bash
 touch database/database.sqlite
-php artisan migrate
-```
-
-### 6. Insérer les données de test
-```bash
-php artisan db:seed --class=TestSeeder
-```
-
-### 7. Compiler les assets
-```bash
-npm run build
-```
-
-### 8. Lancer le serveur
-```bash
+php artisan migrate --seed
 php artisan serve
 ```
 
 L'application est accessible sur `http://localhost:8000`
 
----
+
 ---
 
 ## 📱 Responsive Design
