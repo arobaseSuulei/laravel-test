@@ -28,7 +28,7 @@ Application de gestion de réservations immobilières développée avec Laravel,
 
 ## 🚀 Installation
 ```bash
-git clone https://github.com/arobaseSuulei/innovqube-immo.git
+git clone https://github.com/arobaseSuulei/laravel-test.git
 cd laravel-test
 composer install
 npm install && npm run build
