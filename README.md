@@ -30,7 +30,7 @@ Application de gestion de réservations immobilières développée avec Laravel,
 
 ### 1. Cloner le projet
 ```bash
-git clone <url-du-repo>
+git clone https://github.com/arobaseSuulei/innovqube-immo.git
 cd laravel-test
 ```
 
